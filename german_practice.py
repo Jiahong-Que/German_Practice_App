@@ -58,7 +58,7 @@ st.markdown("---")
 # Load the data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Start Speaking German Fluently _ Questions with Answers!  - Sheet1.csv")
+    df = pd.read_csv("Quick Conversation Practice for Beginners – Learn German Easily! .csv")
     # Remove duplicates and empty rows
     df = df.dropna().drop_duplicates()
     return df
