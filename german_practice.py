@@ -48,7 +48,7 @@ with col2:
         "字体大小 | Font Size",
         min_value=12,
         max_value=120,
-        value=96,
+        value=24,
         step=8,
         help="调整中文和德语文本的字体大小 | Adjust the font size of Chinese and German text"
     )
