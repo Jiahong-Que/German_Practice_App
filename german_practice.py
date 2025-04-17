@@ -181,7 +181,7 @@ else:  # Study Mode
     total_questions = len(df)
     
     # Question selector with improved styling
-    st.markdown('<div class="question-selector">', unsafe_allow_html=True)
+    # st.markdown('<div class="question-selector">', unsafe_allow_html=True)
     st.markdown('<div class="question-selector-label">题号选择 | Question Number</div>', unsafe_allow_html=True)
     
     # Create three columns for the number input
