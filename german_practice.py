@@ -47,7 +47,7 @@ with col2:
     font_size = st.slider(
         "字体大小 | Font Size",
         min_value=12,
-        max_value=92,
+        max_value=120,
         value=96,
         step=8,
         help="调整中文和德语文本的字体大小 | Adjust the font size of Chinese and German text"
@@ -139,6 +139,17 @@ st.markdown(f"""
         color: #1a73e8 !important;
         font-weight: bold !important;
     }}
+    .toggle-container {{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+    }}
+    .toggle-label {{
+        font-size: 18px;
+        color: #666;
+        margin-right: 10px;
+    }}
     </style>
 """, unsafe_allow_html=True)
 
@@ -181,7 +192,6 @@ else:  # Study Mode
     total_questions = len(df)
     
     # Question selector with improved styling
-    # st.markdown('<div class="question-selector">', unsafe_allow_html=True)
     st.markdown('<div class="question-selector-label">题号选择 | Question Number</div>', unsafe_allow_html=True)
     
     # Create three columns for the number input
@@ -204,10 +214,20 @@ else:  # Study Mode
         st.session_state.current_index = selected_question - 1
         st.rerun()
     
+    # Add toggle switch for showing/hiding German text
+    st.markdown('<div class="toggle-container">', unsafe_allow_html=True)
+    st.markdown('<span class="toggle-label">显示德语 | Show German</span>', unsafe_allow_html=True)
+    show_german = st.toggle("", value=st.session_state.show_german, key="study_mode_toggle")
+    if show_german != st.session_state.show_german:
+        st.session_state.show_german = show_german
+        st.rerun()
+    st.markdown('</div>', unsafe_allow_html=True)
+    
     # Display current pair
     current_pair = df.iloc[st.session_state.current_index]
     st.markdown(f'<p class="chinese-text">{current_pair["chinese"]}</p>', unsafe_allow_html=True)
-    st.markdown(f'<p class="german-text">{current_pair["german"]}</p>', unsafe_allow_html=True)
+    if st.session_state.show_german:
+        st.markdown(f'<p class="german-text">{current_pair["german"]}</p>', unsafe_allow_html=True)
     
     # Navigation buttons
     col1, col2 = st.columns(2)
