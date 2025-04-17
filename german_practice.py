@@ -66,7 +66,7 @@ if 'current_index' not in st.session_state:
 st.markdown("""
     <style>
     .chinese-text {
-        font-size: 96px;
+        font-size: 48px;
         font-weight: bold;
         color: #1E88E5;
         margin: 50px 0;
@@ -77,7 +77,7 @@ st.markdown("""
         background-color: #f0f8ff;
     }
     .german-text {
-        font-size: 96px;
+        font-size: 48px;
         font-weight: bold;
         color: #43A047;
         margin: 50px 0;
