@@ -46,8 +46,8 @@ with col1:
 with col2:
     font_size = st.slider(
         "字体大小 | Font Size",
-        min_value=32,
-        max_value=120,
+        min_value=12,
+        max_value=92,
         value=96,
         step=8,
         help="调整中文和德语文本的字体大小 | Adjust the font size of Chinese and German text"
