@@ -4,7 +4,7 @@ import random
 
 # Set page config
 st.set_page_config(
-    page_title="德语练习 | German Practice",
+    page_title="Jiahong | German Practice",
     page_icon="🇩🇪",
     layout="centered"
 )
