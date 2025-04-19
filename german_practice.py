@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 # Add title
-st.title("德语练习 | German Practice")
+st.title("Jiahong | German Practice")
 
 # Add keyboard shortcuts
 st.markdown("""
